@@ -1,0 +1,59 @@
+---
+title: "Documenting the Synthetic Marks Script"
+author: "Omar Halfaoui"
+date: "2026-10-01"
+output:
+  html_document:
+    toc: true
+---
+
+AI Assistance Declaration: ChatGPT (Codex, GPT-6), used on October 1, 2026, assisted with project ideation, documentation drafting, a teaching code example, and formatting. Actual prompts and key responses are recorded in Appendix.md. Automated syntax and PDF checks are documented in Verification.md. Student review, direct calculation, R execution, knitting, and GitHub preview remain pending. No student verification or calculation is claimed in this draft. The student must review and take responsibility for the final work.
+
+# Purpose
+
+Document one short R script that calculates the mean of synthetic marks. The emphasis is on explaining the input, processing, and output clearly.
+
+## Inputs
+
+The vector `marks` contains the invented values 70, 80, and 90. All three are numeric, with no missing values. No file import or personal data is involved.
+
+## Dependencies
+
+The analysis uses base R. Knitting this document requires `rmarkdown`, `knitr`, and Pandoc. Open this file in RStudio and select **Knit** to create an HTML report.
+
+# Script and explanation
+
+`<-` assigns a value to a variable. `c()` combines numbers into a vector. `mean()` calculates its arithmetic mean. `print()` displays the result with the label `average_mark`.
+
+The next chunk displays the actual script, so the documentation stays connected to its source.
+
+```{r show-script, echo=FALSE, results='asis'}
+cat("```r
+", paste(readLines("analysis.R"), collapse = "
+"),
+    "
+```
+", sep = "")
+```
+
+## Run the script
+
+```{r run-analysis, echo=TRUE}
+source("analysis.R", local = knitr::knit_global())
+```
+
+## Outputs
+
+The result is printed in the Console and in the knitted report. The script does not save a dataset or modify the input. Calculate the expected average directly and compare it with the displayed result; no expected numerical answer is supplied by AI.
+
+# Verification
+
+1. In a spreadsheet, enter the three marks in A1:A3 and use `=AVERAGE(A1:A3)`.
+2. Independently calculate `(70 + 80 + 90) / 3` yourself.
+3. Compare both results with the R output and spot-check the three input values.
+4. Knit this document and inspect the title, headings, code, and result.
+5. Record the outcome and any edits in Verification.md.
+
+# Limitations and ethics
+
+The observations are synthetic and too few for meaningful educational conclusions. AI drafted this teaching example and documentation. Student verification is pending. The assignment restricts AI to assistance rather than code generation; review this example as a learning aid and follow the instructor's interpretation before using it in the final submission.
