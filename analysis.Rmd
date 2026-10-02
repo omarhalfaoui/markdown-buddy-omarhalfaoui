@@ -27,13 +27,7 @@ The analysis uses base R. Knitting this document requires `rmarkdown`, `knitr`, 
 
 The next chunk displays the actual script, so the documentation stays connected to its source.
 
-```{r show-script, echo=FALSE, results='asis'}
-cat("```r
-", paste(readLines("analysis.R"), collapse = "
-"),
-    "
-```
-", sep = "")
+```{r show-script, eval=FALSE, code=readLines("analysis.R")}
 ```
 
 ## Run the script
